@@ -1,3 +1,5 @@
+
+alert("JavaScript ipo sawa");
 function register(){
 
 	let name = document.getElementById("fname").value;
@@ -74,4 +76,11 @@ function login(){
 
 	alert("Login button clicked");
 
+}
+function register(){
+	  alert("Register imefanya kazi");
+}
+
+function uploadFile(){
+	  alert("Upload imefanya kazi");
 }

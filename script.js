@@ -24,7 +24,8 @@ function register(){
 
 }
 
-
+const supabaseUrl = "https://yyttzjxjviryjfgwvaof.supabase.co/rest/v1/";
+const supabaseKey = "sb_publishable_Bp5RhJN8D3mkHCIjQB9s0g_5YPKJ2Av";
 
 
 function login(){

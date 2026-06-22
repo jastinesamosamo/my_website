@@ -1,13 +1,95 @@
+
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Jastine samo</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="script.js"></script>
-</head>
-<body>
-	<button onclick="salamu()">Bonyeza hapa</button>
-    <h1>Karibu kwenye Website Yangu</h1>
-    <p>part of learning.</p>
-</body>
+	<head>
+		    <title>Employee Salary Slip Generator</title>
+		        <link rel="stylesheet" href="style.css">
+			    <link rel="stylesheet" href="style.css">
+			            <script src="script.js"></script>
+	</head>
+
+	<body>
+
+		<div class="container">
+
+			<h1>EMPLOYEE SALARY SLIP GENERATOR</h1>
+
+
+			<!-- REGISTER -->
+
+			<div class="box" id="registerBox">
+
+				<h2>Register</h2>
+
+				<input type="text" id="fname" placeholder="First Name" required>
+				<br><br>
+
+				<input type="text" placeholder="Middle Name">
+				<br><br>
+
+				<input type="text" placeholder="Surname" required>
+				<br><br>
+
+				<input type="text" placeholder="Phone Number">
+				<br><br>
+
+				<input type="email" placeholder="Email">
+				<br><br>
+
+
+				<div class="gender">
+					Gender:
+					<input type="radio" name="gender"> Male
+					<input type="radio" name="gender"> Female
+				</div>
+
+				<br>
+
+				<input type="text" id="username" placeholder="Username">
+
+				<br><br>
+
+				<input type="password" placeholder="Password">
+
+				<br><br>
+
+				<textarea placeholder="Briefly Explain about yourself"></textarea>
+
+				<br><br>
+
+				<button onclick="register()">Register</button>
+
+			</div>
+
+
+
+			<!-- LOGIN -->
+
+			<div class="box hidden" id="loginBox">
+
+				<h2>Login</h2>
+
+				<input type="text" placeholder="Enter Username">
+
+				<br><br>
+
+				<input type="password" placeholder="Enter Password">
+
+				<br><br>
+
+				<button onclick="login()">Login</button>
+
+				<br><br>
+
+				<a href="#">Forgot Password?</a>
+
+			</div>
+
+
+		</div>
+
+
+		<script src="script.js"></script>
+
+	</body>
 </html>

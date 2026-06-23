@@ -44,31 +44,31 @@
 
         <h2>Job Application Form</h2>
 
-        <input type="text" placeholder="Jina la Kwanza">
-        <input type="text" placeholder="Jina la Pili">
-        <input type="text" placeholder="Jina la Tatu">
+        <input type="text" id="name"  placeholder="Jina la Kwanza">
+        <input type="text" id="name2"  placeholder="Jina la Pili">
+        <input type="text" id="name3" placeholder="Jina la Tatu">
 
-        <input type="tel" placeholder="Phone Number">
+        <input type="tel" id="phone"  placeholder="Phone Number">
 
         <label>Birth Date</label>
-        <input type="date">
+        <input type="date" id="borthday">
 
         <label>Jinsia</label>
-        <select>
+        <select id="gender">
             <option>Chagua Jinsia</option>
             <option>Male</option>
             <option>Female</option>
         </select>
 
-        <input type="number" placeholder="Miaka">
+        <input type="number" id="age" placeholder="Miaka">
 
-        <input type="email" placeholder="Email">
+        <input type="email" id="email" placeholder="Email">
 
         <label>Upload Photo</label>
         <input type="file" accept="image/*">
 
         <label>Kiwango cha Elimu</label>
-        <select>
+        <select id="education">
             <option>Chagua Elimu</option>
             <option>Primary</option>
             <option>Secondary</option>
@@ -79,13 +79,16 @@
             <option>PhD</option>
         </select>
 
-        <button class="submit-btn">
+<button type="button" class="submit-btn" 
+	onclick="registerUser()">
             Tuma Maombi
         </button>
 
     </div>
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script src="script.js"></script>
 

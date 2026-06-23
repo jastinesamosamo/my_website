@@ -69,6 +69,9 @@ function register() {
     showLogin();
 }
 
+function registerUser() {
+	    alert("Maombi yametumwa");
+}
 function login() {
 
     let email =

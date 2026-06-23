@@ -1,103 +1,93 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		    <title>Employee Salary Slip Generator</title>
-		        <link rel="stylesheet" href="style.css">
-			    <link rel="stylesheet" href="style.css">
-			        
-	</head>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-	<body>
-	                               <script src="script.js"></script>
-                                    <script src="https://cdn.jsdelivr.net/npm/@s
-upabase/supabase-js@2"></scripti>
-		<input type="text" id="name" placeholder="Jina lako">
+<div class="container">
 
-		<input type="file" id="file">
-
-		<button onclick="uploadFile()">Upload Document</button>
-
-		<div class="container">
-
-			<h1>EMPLOYEE SALARY SLIP GENERATOR</h1>
+    <!-- REGISTER -->
+    <div class="card" id="registerSection">
+        <h2>Tengeneza Account</h2>
 
 
-			<!-- REGISTER -->
+        <input type="email" id="regEmail" placeholder="Email">
+        <input type="password" id="regPassword" placeholder="Password">
 
-			<div class="box" id="registerBox">
+        <button onclick="register()">Register</button>
 
-				<h2>Register</h2>
+        <p>Already have an account?
+            <a href="#" onclick="showLogin()">Login</a>
+        </p>
+    </div>
 
-				<input type="text" id="fname" placeholder="First Name" required>
-				<br><br>
+    <!-- LOGIN -->
+    <div class="card hidden" id="loginSection">
+        <h2>Login</h2>
 
-				<input type="text" placeholder="Middle Name">
-				<br><br>
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
 
-				<input type="text" placeholder="Surname" required>
-				<br><br>
+        <button onclick="login()">Login</button>
 
-				<input type="text" placeholder="Phone Number">
-				<br><br>
+        <p>huna account?
+            <a href="#" onclick="showRegister()">Register</a>
+        </p>
+    </div>
 
-				<input type="email" placeholder="Email">
-				<br><br>
+    <!-- APPLICATION FORM -->
+    <div class="card hidden" id="formSection">
 
+        <h2>Job Application Form</h2>
 
-				<div class="gender">
-					Gender:
-					<input type="radio" name="gender"> Male
-					<input type="radio" name="gender"> Female
-				</div>
+        <input type="text" placeholder="Jina la Kwanza">
+        <input type="text" placeholder="Jina la Pili">
+        <input type="text" placeholder="Jina la Tatu">
 
-				<br>
+        <input type="tel" placeholder="Phone Number">
 
-				<input type="text" id="username" placeholder="Username">
+        <label>Birth Date</label>
+        <input type="date">
 
-				<br><br>
+        <label>Jinsia</label>
+        <select>
+            <option>Chagua Jinsia</option>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
 
-				<input type="password" placeholder="Password">
+        <input type="number" placeholder="Miaka">
 
-				<br><br>
+        <input type="email" placeholder="Email">
 
-				<textarea placeholder="Briefly Explain about yourself"></textarea>
+        <label>Upload Photo</label>
+        <input type="file" accept="image/*">
 
-				<br><br>
+        <label>Kiwango cha Elimu</label>
+        <select>
+            <option>Chagua Elimu</option>
+            <option>Primary</option>
+            <option>Secondary</option>
+            <option>Certificate</option>
+            <option>Diploma</option>
+            <option>Bachelor Degree</option>
+            <option>Master Degree</option>
+            <option>PhD</option>
+        </select>
 
-				<button type=" onclick="register()">Register</button>
+        <button class="submit-btn">
+            Tuma Maombi
+        </button>
 
-			</div>
+    </div>
 
+</div>
 
+<script src="script.js"></script>
 
-			<!-- LOGIN -->
-
-			<div class="box hidden" id="loginBox">
-
-				<h2>Login</h2>
-
-				<input type="text" placeholder="Enter Username">
-
-				<br><br>
-
-				<input type="password" placeholder="Enter Password">
-
-				<br><br>
-
-				<button onclick="login()">Login</button>
-
-				<br><br>
-
-				<a href="#">Forgot Password?</a>
-
-			</div>
-
-
-		</div>
-
-
-		<script src="script.js"></script>
-
-	</body>
+</body>
 </html>

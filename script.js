@@ -1,121 +1,57 @@
-alert("JavaScript ipo sawa");
-
-
-// SUPABASE CONNECTION
-
-const supabaseUrl = "WEKA_URL_YAKO_HAPA";
-const supabaseKey = "WEKA_ANON_KEY_YAKO_HAPA";
-
-const supabaseClient = supabase.createClient(
-    supabaseUrl,
-    supabaseKey
-);
-
-
-// REGISTER
-
-function register(){
-
-    let name = document.getElementById("fname").value;
-
-
-    if(name == ""){
-
-        alert("Please enter your name");
-
-    }else{
-
-        alert("Registration successful");
-
-
-        document.getElementById("registerBox").style.display = "none";
-
-        document.getElementById("loginBox").style.display = "block";
-
-    }
-
+function showLogin() {
+    document.getElementById("registerSection").classList.add("hidden");
+    document.getElementById("loginSection").classList.remove("hidden");
 }
 
-
-
-// LOGIN
-
-function login(){
-
-    alert("Login button clicked");
-
+function showRegister() {
+    document.getElementById("loginSection").classList.add("hidden");
+    document.getElementById("registerSection").classList.remove("hidden");
 }
 
+function register() {
 
+    let email =
+        document.getElementById("regEmail").value;
 
-// UPLOAD DOCUMENT
+    let password =
+        document.getElementById("regPassword").value;
 
-async function uploadFile(){
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
 
-    const name = document.getElementById("name").value;
+    alert("Account Created Successfully!");
 
-    const file = document.getElementById("file").files[0];
-
-
-    if(!file){
-
-        alert("Chagua document kwanza");
-
-        return;
-
-    }
-
-
-    const fileName = Date.now() + "-" + file.name;
-
-
-
-    const { error } = await supabaseClient.storage
-    .from("documents")
-    .upload(fileName, file);
-
-
-
-    if(error){
-
-        alert(error.message);
-
-        return;
-
-    }
-
-
-
-    const { data } = supabaseClient.storage
-    .from("documents")
-    .getPublicUrl(fileName);
-
-
-
-    const save = await supabaseClient
-    .from("documents")
-    .insert([
-        {
-            name:name,
-            file_url:data.publicUrl
-        }
-    ]);
-
-
-
-    if(save.error){
-
-        alert(save.error.message);
-
-        return;
-
-    }
-
-
-
-    alert("Document imepakiwa!");
-
-
+    showLogin();
 }
-const supabaseUrl = "https://yyttzjxjviryjfgwvaof.supabase.co/rest/v1/";
-const supabaseKey = "sb_publishable_Bp5RhJN8D3mkHCIjQB9s0g_5YPKJ2Av";
+
+function login() {
+
+    let email =
+        document.getElementById("loginEmail").value;
+
+    let password =
+        document.getElementById("loginPassword").value;
+
+    let savedEmail =
+        localStorage.getItem("email");
+
+    let savedPassword =
+        localStorage.getItem("password");
+
+    if (
+        email === savedEmail &&
+        password === savedPassword
+    ) {
+
+        document.getElementById("loginSection")
+            .classList.add("hidden");
+
+        document.getElementById("formSection")
+            .classList.remove("hidden");
+
+    } else {
+
+        alert("Email au Password sio sahihi");
+
+    }
+}
